@@ -41,7 +41,7 @@ module View =
         let state, dispatch = React.useElmish (State.init, State.update, [||])
 
         [ Bulma.title "Example"
-          Html.p (string state.Value)
+          Html.p ($"{state.Value}")
           Bulma.button.button [ prop.text "+"; prop.onClick (fun _ -> Increment |> dispatch) ]
           Bulma.button.button [ prop.text "-"; prop.onClick (fun _ -> Decrement |> dispatch) ]
            ]
